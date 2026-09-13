@@ -52,6 +52,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </footer>
         </div>
+        <script
+          src="https://cdn.jsdelivr.net/gh/joshualparris/JoshHub@35c4348b4adfbc1c64bad8a3d3e31ede008a4441/public/podcast-dock.js"
+          data-topics="it"
+          data-label="🎧 Listen to a different IT support podcast"
+          defer
+        />
       </body>
     </html>
   );
