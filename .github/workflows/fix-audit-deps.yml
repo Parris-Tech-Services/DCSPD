@@ -19,10 +19,12 @@ jobs:
         with:
           node-version: '22.13.0'
           cache: npm
-      - name: Upgrade patched framework dependencies
-        run: npm install next@16.3.5 eslint-config-next@16.3.5
-      - name: Apply non-breaking audit fixes
-        run: npm audit fix
+      - name: Upgrade patched direct dependencies
+        run: npm install next@16.3.5 eslint-config-next@16.3.5 pdfjs-dist@6.3.289
+      - name: Refresh transitive dependencies within declared ranges
+        run: npm update
+      - name: Require no high or critical advisories
+        run: npm audit --audit-level=high
       - name: Verify install, tests and build
         run: |
           npm run typecheck
