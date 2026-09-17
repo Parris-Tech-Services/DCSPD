@@ -42,5 +42,8 @@ jobs:
             exit 0
           fi
           git commit -m "Update dependencies for security audit"
+          # postinstall refreshes the copied PDF.js worker; keep the dependency
+          # commit focused on package metadata so rebase can proceed cleanly.
+          git reset --hard HEAD
           git pull --rebase origin main
           git push
