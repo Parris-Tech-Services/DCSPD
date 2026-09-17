@@ -28,12 +28,10 @@ export default function PdfReader({ pdfUrl, fileName, darkMode }: PdfReaderProps
     async function loadPdf() {
       try {
         const pdfjsLib = await import('pdfjs-dist');
-        // Use the locally bundled worker (kept in sync with the installed
-        // pdfjs-dist version by the postinstall copy step). PDF.js v5 ships an
-        // ES-module worker (.mjs); the previous CDN URL pointed at a v4-style
-        // ".js" file that does not exist for v5, so every document failed to load.
+        // Use the locally bundled ES-module worker (kept in sync with the
+        // installed pdfjs-dist version by the postinstall copy step).
         pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-        const loadingTask = pdfjsLib.getDocument(pdfUrl);
+        const loadingTask = pdfjsLib.getDocument({ url: pdfUrl });
         const pdfDocument = await loadingTask.promise;
         if (cancelled) return;
         setPdf(pdfDocument);
