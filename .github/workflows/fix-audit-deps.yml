@@ -19,8 +19,8 @@ jobs:
         with:
           node-version: '22.13.0'
           cache: npm
-      - name: Use current npm
-        run: npm install --global npm@latest
+      - name: Use current compatible npm
+        run: npm install --global npm@11
       - name: Upgrade patched direct dependencies
         run: npm install next@16.3.5 eslint-config-next@16.3.5 pdfjs-dist@6.3.289 vitest@4.1.11
       - name: Apply safe transitive advisory fixes
