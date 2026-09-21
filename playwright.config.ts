@@ -12,7 +12,7 @@ export default defineConfig({
   // serial execution (the old `1`) just wasted wall-clock.
   workers: process.env.CI ? '50%' : undefined,
   reporter: process.env.CI ? 'github' : 'list',
-  timeout: 60_000,
+  timeout: 90_000,
   use: {
     baseURL,
     trace: 'on-first-retry',

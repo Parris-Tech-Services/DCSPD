@@ -5,7 +5,12 @@ import { useEffect } from 'react';
 export default function PwaRegistration() {
   useEffect(() => {
     const isDev = process.env.NODE_ENV !== 'production';
-    if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
+    const isLocal =
+      typeof window !== 'undefined' &&
+      (window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname.endsWith('.local'));
+    if ('serviceWorker' in navigator && !isLocal) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').then(
           (registration) => {
