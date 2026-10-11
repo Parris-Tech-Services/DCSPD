@@ -169,6 +169,10 @@ export default function ModuleDetail({ moduleData }: ModuleDetailProps) {
 
   return (
     <div className="space-y-6">
+      <aside className="rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-slate-800" aria-label="Module evidence status">
+        <strong>Learning quality: Developing (provisional).</strong> This module includes revision and practice, not proof of professional competence. Use worked cases, original references and reviewed evidence before treating it as mastery.
+        <a className="ml-2 underline" href="https://github.com/Parris-Tech-Services/DCSPD/blob/main/docs/DCSPD-MODULE-QUALITY-REGISTER-2026-10-11.md" target="_blank" rel="noopener noreferrer">Module quality register ↗</a>
+      </aside>
       <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
         <Link href="/" className="underline">
           Dashboard
