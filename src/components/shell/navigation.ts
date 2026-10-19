@@ -79,6 +79,7 @@ export const mobileNavigationItems = [
   { href: '/focus', label: 'Focus' },
   { href: '/daily-challenge', label: 'Daily Challenge' },
   { href: '/modules', label: 'Modules' },
+  { href: '/subnetting', label: 'Subnet Lab' },
   { href: '/scenarios', label: 'Scenario Lab' },
   { href: '/practice-exam', label: 'Practice Exam' },
   { href: '/ebooks', label: 'Ebook Reader' },
