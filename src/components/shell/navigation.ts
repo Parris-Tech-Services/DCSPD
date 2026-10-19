@@ -15,6 +15,7 @@ export const navigationGroups = [
     label: 'Learn',
     items: [
       { href: '/modules', label: 'Modules' },
+      { href: '/subnetting', label: 'Subnet Lab' },
       { href: '/certifications/aplus-core-1', label: 'A+ Core 1' },
       { href: '/certifications/aplus-core-2', label: 'A+ Core 2' },
       { href: '/certifications/network-plus', label: 'Network+' },
