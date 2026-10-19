@@ -133,6 +133,7 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-8 pb-12">
+      <Link href="/learning-path" className="block rounded-2xl border border-emerald-200 bg-emerald-50 p-5 font-semibold text-emerald-900 hover:bg-emerald-100">Learn networking across all four apps →</Link>
       <header className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
