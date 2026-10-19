@@ -2,6 +2,7 @@ import type { TrainingModule } from '../types/training';
 import type { AssessmentSource } from '../types/assessment';
 import { foundationsModules } from './modules/foundations';
 import { networkingModules } from './modules/networking';
+import { mspNetworkingModules } from './modules/mspNetworking';
 import { endpointModules } from './modules/endpoint';
 import { identityModules } from './modules/identity';
 import { cloudModules } from './modules/cloud';
@@ -31,6 +32,7 @@ export function getAllBaseModules(): TrainingModule[] {
   return [
     ...foundationsModules,
     ...networkingModules,
+    ...mspNetworkingModules,
     ...endpointModules,
     ...identityModules,
     ...cloudModules,
