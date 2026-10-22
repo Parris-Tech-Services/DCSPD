@@ -5,6 +5,7 @@ import Sidebar from '../src/components/shell/Sidebar';
 import PwaRegistration from '../src/components/shell/PwaRegistration';
 import AppUsageTracker from '../src/components/usage/AppUsageTracker';
 import { APP_NAME, APP_DESCRIPTION, APP_SHORT_NAME } from '../src/config/appConfig';
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: APP_NAME,
@@ -52,6 +53,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </footer>
         </div>
+        <Script
+          src="https://cloud.umami.is/script.js"
+          strategy="afterInteractive"
+          data-website-id="__UMAMI_WEBSITE_ID__"
+          data-do-not-track="true"
+          data-performance="true"
+          data-domains="dcspd.vercel.app"
+          data-tag="DCSPD"
+        />
       </body>
     </html>
   );
