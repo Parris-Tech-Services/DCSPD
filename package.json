@@ -21,7 +21,7 @@
     "test:e2e:ci": "playwright test --project=chromium --project=mobile-chrome"
   },
   "dependencies": {
-    "lucide-react": "0.275.0",
+    "lucide-react": "1.70.0",
     "next": "^16.4.1",
     "pdfjs-dist": "^6.3.289",
     "react": "18.2.0",
