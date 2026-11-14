@@ -71,11 +71,16 @@ export default function FlashcardDeck({ cards, progress, onReview, analyticsCont
 
       <FlashcardCard front={card.front} back={card.back} flipped={flipped} onFlip={() => setFlipped(!flipped)} />
 
+      <p className="text-sm text-slate-600" aria-live="polite">
+        {flipped ? "Compare your recall with the reference answer, then choose a review rating." : "Try to recall the answer first. Reveal the card before rating how well you remembered."}
+      </p>
       <div className="grid gap-3 md:grid-cols-4">
         {ratings.map((rating) => (
           <button
             key={rating}
+            disabled={!flipped}
             onClick={() => {
+              if (!flipped) return;
               if (analyticsContext) {
                 trackUsageInteraction({
                   eventType: 'flashcard_answered',
@@ -90,7 +95,7 @@ export default function FlashcardDeck({ cards, progress, onReview, analyticsCont
               onReview(card.id, rating);
               setIndex(index === cards.length - 1 ? 0 : index + 1);
             }}
-            className="flex flex-col items-center gap-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800 transition hover:bg-slate-50"
+            className="flex flex-col items-center gap-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <span className="capitalize">{rating}</span>
             <span className="text-[10px] font-normal text-slate-500">{getReviewIntervalLabel(rating)}</span>
