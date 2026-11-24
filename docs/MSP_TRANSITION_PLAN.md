@@ -18,8 +18,8 @@ The most significant change is moving from a single-tenant mindset (DCS) to a mu
 
 ### Phase 1: Generalization & Branding (Immediate)
 - [ ] Fully align app branding to **ITPrep**.
-- [ ] Introduce a "Context Toggle" in Settings (School Mode vs. MSP Mode).
-- [ ] Update `TrainingModule` types to support `targetEnvironment` and `mspRelevance`.
+- [x] Introduce a "Context Toggle" in Settings (School Mode vs. MSP Mode).
+- [x] Update `TrainingModule` types to support `targetEnvironment` and `mspRelevance`.
 
 ### Phase 2: MSP Foundations Module
 Create a new core module for MSP entry-level technicians:
